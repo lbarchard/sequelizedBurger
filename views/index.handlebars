@@ -1,0 +1,52 @@
+<img id="burger" src=".\assets\img\burger.png" alt="Tasty Burger" height="237" width="320">
+
+
+
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4">
+      <h1>Burgers - Yay!</h1>
+      <form method="POST" action="/" class="button-size">
+        <div class="form-group">
+          <input type="text" name="burger" class="form-control" placeholder="Burger Name"></input>
+          <button class="btn btn-default" type="submit">Save Burger!</button>
+        </div>
+      </form>
+      <p>Enter a burger you want to eat. Click the "Save Burger!" button.</p>
+    </div>
+
+    <div class="col-md-4">
+      <h1>Eat-Da-Burger!</h1>
+      <ul class="list-group">
+        {{#each availableBurgers}}
+          <li class="list-group-item">
+            <p>
+              {{this.id}}. {{this.burger_name}}
+
+              <form action="/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <button class="btn btn-default" type="submit">Devour it!</button>
+              </form>
+            </p>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h1>Devoured Burgers</h1>
+      <ul class="list-group">
+        {{#each devouredBurgers}}
+          <li class="list-group-item">
+            <p>
+              {{this.id}}. {{this.burger_name}}
+            </p>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
+  </div>
+</div>
