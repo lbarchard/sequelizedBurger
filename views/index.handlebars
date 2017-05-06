@@ -23,7 +23,7 @@
         {{#each availableBurgers}}
           <li class="list-group-item">
             <p>
-              {{this.id}}. {{this.burger_name}}
+              {{this.id}}. {{this.burger}}
 
               <form action="/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="id" value="{{this.id}}">
@@ -41,7 +41,7 @@
         {{#each devouredBurgers}}
           <li class="list-group-item">
             <p>
-              {{this.id}}. {{this.burger_name}}
+              {{this.id}}. {{this.burger}}
             </p>
           </li>
         {{/each}}
