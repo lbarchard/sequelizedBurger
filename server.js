@@ -32,7 +32,7 @@ var routes = require("./routes/all-routes.js");
 app.use("/", routes);
 
 // Syncing our sequelize models and then starting our express app
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({  }).then(function() {
   app.listen(port, function() {
     console.log("App listening on PORT " + port);
   });
